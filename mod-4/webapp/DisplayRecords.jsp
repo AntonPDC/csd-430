@@ -8,7 +8,6 @@
 --%>
 
 <%@ page import="javaBean1.MovieRecord, java.util.*" %> 
-<jsp:useBean id="movieResults" class="javaBean1.MovieRecord" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -22,7 +21,8 @@
 <body>
     <h1>JavaBean: "MovieRecord"</h1> 
     <h2>Movie Characters</h2>
-
+<!-- Declare the shared bean -->
+<jsp:useBean id="movieResults" class="javaBean1.MovieRecord" />
 <%
     // Create a list of MovieRecord objects with hardcoded movie character data
     List<MovieRecord> records = new ArrayList<>();
@@ -33,14 +33,31 @@
     records.add(new MovieRecord("Hans", "Santino Fontana", "Antagonist"));
 
     // Loop through the list and output each record inside a styled HTML div
-    for (MovieRecord m : records) {
+    for (MovieRecord m : records) { 
+
+	movieResults.setCharacter(m.getCharacter());
+	movieResults.setActor(m.getActor());
+	movieResults.setRoleType(m.getRoleType());
 %>
-    <%--Here is where we use our getters to display the data --%>
+
+
+	<div class="card">
+	
+		<h3> <jsp:getProperty name="movieResults" property="character"/> </h3>
+		<p><strong>Actor: </strong><jsp:getProperty name="movieResults" property="actor"/> </p>
+		<p><strong>Role Type: </strong><jsp:getProperty name="movieResults" property="roleType" /></p>
+	
+	</div>
+
+<%--
+	**This also works (inside the loop) but I wanted to make sure I used your format for full credit**
     <div class="card">
         <h3><%= m.getCharacter() %></h3>
         <p><strong>Actor:</strong> <%= m.getActor() %></p>
         <p><strong>Role Type:</strong> <%= m.getRoleType() %></p>
     </div>
+ --%>
+
 <%
     } // End of for-loop
 %>

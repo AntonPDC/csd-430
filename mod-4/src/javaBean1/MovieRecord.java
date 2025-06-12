@@ -29,7 +29,7 @@ public class MovieRecord implements java.io.Serializable {
         this.roleType = roleType;
     }
 
-    // Setters – typically used for dynamic updates, even if not used in this case
+    // Setters – typically used for dynamic updates
 
     public void setCharacter(String character) {
         this.character = character;
