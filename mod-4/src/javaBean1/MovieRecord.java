@@ -1,6 +1,6 @@
 /**
  * Name: Anton DeCesare
- * Class: CSD 340 – Java Web Development
+ * Class: CSD 430 – Java Web Development
  * Module: 4
  *
  * This JavaBean class represents a movie character record.
@@ -16,6 +16,8 @@ public class MovieRecord implements java.io.Serializable {
     private String character;
     private String actor;
     private String roleType;
+    private double sceneCount;
+    private float screenTime;
 
     // No-argument constructor (required for JavaBean compliance)
     public MovieRecord() {
@@ -23,10 +25,12 @@ public class MovieRecord implements java.io.Serializable {
     }
 
     // Overloaded constructor to create a fully-initialized MovieRecord object
-    public MovieRecord(String character, String actor, String roleType) {
+    public MovieRecord(String character, String actor, String roleType, double sceneCount, float screenTime) {
         this.character = character;
         this.actor = actor;
         this.roleType = roleType;
+        this.sceneCount = sceneCount;
+        this.screenTime = screenTime;
     }
 
     // Setters – typically used for dynamic updates
@@ -42,6 +46,14 @@ public class MovieRecord implements java.io.Serializable {
     public void setRoleType(String roleType) {
         this.roleType = roleType;
     }
+    
+    public void setSceneCount(double sceneCount) {
+    	this.sceneCount = sceneCount;
+    }
+    
+    public void setScreenTime(float screenTime) {
+    	this.screenTime = screenTime;
+    }
 
     // Getters – used in JSP to access property values
 
@@ -56,4 +68,13 @@ public class MovieRecord implements java.io.Serializable {
     public String getRoleType() {
         return roleType;
     }
+    
+    public double getSceneCount() {
+    	return sceneCount;
+    }
+    
+    public float getScreenTime() {
+    	return screenTime;
+    }
+   
 }
