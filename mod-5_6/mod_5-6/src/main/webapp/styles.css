@@ -1,0 +1,128 @@
+/* General Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container Wrapper */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #4a148c;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    color: #6a1b9a;
+}
+
+/* Paragraph and Label Styling */
+p, label {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Dropdown and Form Styling */
+form {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+select, input[type="submit"] {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #6a1b9a;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #4a148c;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Grid for Index Page */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.crud-button {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #7b1fa2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.crud-button:hover {
+    background-color: #4a148c;
+}
+
+/* Notes or Instructions */
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Error Message Styling */
+p.error {
+    color: red;
+    font-weight: bold;
+}
